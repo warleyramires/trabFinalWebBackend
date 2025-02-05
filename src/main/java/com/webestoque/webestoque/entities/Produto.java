@@ -21,11 +21,11 @@ public class Produto {
     @Column(name = "data_cadastro")
     private LocalDateTime dtCadastro;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "fornecedor_id")
+    @ManyToOne
+    @JoinColumn(name = "fornecedor_id", nullable = false)
     private Fornecedor fornecedor;
 
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "categoria_id")
+    @ManyToOne
+    @JoinColumn(name = "categoria_id", nullable = false)
     private Categoria categoria;
 }
